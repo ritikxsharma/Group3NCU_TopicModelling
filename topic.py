@@ -18,9 +18,9 @@ def hello_world():
         # res = tpc
         # print(pprint(tpc))
         # print(len(tpc))
-        return render_template('lda_index.html', result = tpc)
+        return render_template('index.html', result = tpc)
     else:
-        return render_template('lda_index.html')
+        return render_template('index.html')
 
 
 """@app.route('/rslt', methods=['GET', 'POST'])

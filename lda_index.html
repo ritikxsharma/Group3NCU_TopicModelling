@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}TopicFinder{% endblock title %}
+
+{% block body %}
+<div class="container my-3">
+    <h2>Add a Text</h2>
+    <form action="/" method="POST">
+        <div class="mb-3">
+          <label for="article" class="form-label">Your Text</label>
+          <textarea style="height: 240px;" type="text" class="form-control" name="article" id="article" aria-describedby="emailHelp" placeholder="Enter your text here"></textarea>
+          </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+       <!-- <div class="mb-3"></div>
+          <label for="desc" class="form-label">Todo Description</label>
+          <input type="text" class="form-control" name="desc" id="desc">
+        </div>
+    -->
+      </form>
+</div>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Doc_No</th>
+        <th scope="col">Dominant Topic</th>
+        <th scope="col">Topic_Perc_Contrib</th>
+        <th scope="col">Keywords</th>
+        <th scope="col">Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in result %}
+      <tr>
+        <th scope="row">{{row[0]}}</th>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+        <td>{{row[4]}}</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+{% endblock body %}
